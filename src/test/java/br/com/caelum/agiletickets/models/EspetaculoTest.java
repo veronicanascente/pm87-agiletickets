@@ -142,7 +142,7 @@ public class EspetaculoTest {
 	@Test
 	public void deveCriarQuatroSessoesParaEspetaculoComIntervaloDeQuatroSemanasEPeriodiciodadeSemanal(){
 		LocalDate inicio = new LocalDate();
-		LocalDate fim = inicio.plusDays(30);
+		LocalDate fim = inicio.plusWeeks(3);
 		Periodicidade periodicidade = Periodicidade.SEMANAL;
 		LocalTime horario = new LocalTime();
 		Espetaculo show = new Espetaculo();
@@ -154,7 +154,7 @@ public class EspetaculoTest {
 		for(Sessao sessao : lstSessao){
 			Assert.assertEquals(show, sessao.getEspetaculo());
 			Assert.assertEquals(dataInicio, sessao.getInicio());
-			dataInicio = dataInicio.plusDays(7);
+			dataInicio = dataInicio.plusWeeks(1);
 		}
 	}
 	

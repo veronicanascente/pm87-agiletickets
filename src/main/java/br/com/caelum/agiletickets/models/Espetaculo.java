@@ -97,26 +97,7 @@ public class Espetaculo {
 	 * Repare que a data da primeira sessao é sempre a data inicial.
 	 */
 	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim, LocalTime horario, Periodicidade periodicidade) {
-		int dias = Days.daysBetween(inicio, fim).getDays();
-		dias++;
-		
-		int numeroDeEspetaculos = (Periodicidade.SEMANAL.equals(periodicidade) && dias == 1) || 
-				Periodicidade.DIARIA.equals(periodicidade)? dias : (dias/7);
-		
-			
-		int intervaloDeDias = Periodicidade.DIARIA.equals(periodicidade)? 1 : 7;
-		
-		List<Sessao> lstSessao = new ArrayList<Sessao>();
-		for(int i = 0; i < numeroDeEspetaculos; i++){
-			Sessao sessao = new Sessao();
-			sessao.setEspetaculo(this);
-			sessao.setInicio(inicio.toDateTime(horario));
-			
-			lstSessao.add(sessao);
-			inicio = inicio.plusDays(intervaloDeDias);
-		}
-		
-		return lstSessao;
+		return periodicidade.criaSessoes().cria(inicio, fim, horario, this);
 	}
 
 	public boolean Vagas(int qtd, int min) {
