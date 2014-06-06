@@ -129,7 +129,7 @@ public class EspetaculoTest {
 		Espetaculo show = new Espetaculo();
 		List<Sessao> lstSessao = show.criaSessoes(inicio, fim, horario, periodicidade);
 				
-		Assert.assertEquals(5, lstSessao.size());
+		Assert.assertEquals(10, lstSessao.size());
 		
 		DateTime dataInicio = inicio.toDateTime(horario);
 		for(Sessao sessao : lstSessao){
@@ -148,7 +148,7 @@ public class EspetaculoTest {
 		Espetaculo show = new Espetaculo();
 		List<Sessao> lstSessao = show.criaSessoes(inicio, fim, horario, periodicidade);
 				
-		Assert.assertEquals(4, lstSessao.size());
+		Assert.assertEquals(5, lstSessao.size());
 		
 		DateTime dataInicio = inicio.toDateTime(horario);
 		for(Sessao sessao : lstSessao){
