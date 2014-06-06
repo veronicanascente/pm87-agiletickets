@@ -33,7 +33,7 @@ public class SessaoTest {
 	@Test
 	public void deveReservarIngressoParaQtdeIgualAoNumeroIngressoDisponivel() throws Exception{
 		Sessao sessao = new Sessao();
-		sessao.setTotalIngressos(90);
+		sessao.setTotalIngressos(89);
 		
 		Assert.assertTrue(sessao.podeReservar(90));
 	}
